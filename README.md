@@ -1,6 +1,6 @@
 # RiotApi
 
-# Used to check summoner profile in League of Legends catches previous and his Tag example 
+# Used to check summoner profile in League of Legends using summoner name and his Tag  
 # Name: "ProWarzywo"
 # Tag: "144 Hz"
 

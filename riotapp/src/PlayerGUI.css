@@ -1,0 +1,19 @@
+img{
+    border-radius: 50%;
+    width: 20%;
+}
+.playerGUI{
+    background-color:aqua ;
+    width: 25%;
+    height: 700px;
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+    flex-direction: column;
+    -webkit-border-top-left-radius: 100px;
+    -webkit-border-bottom-right-radius: 100px;
+    -moz-border-radius-topleft: 100px;
+    -moz-border-radius-bottomright: 100px;
+    border-top-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+}

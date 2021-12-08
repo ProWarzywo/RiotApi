@@ -11,7 +11,7 @@ function App(){
     const [playerData, setPlayerData] = useState({})
     const [playerHistory,setPlayerHistory] = useState({})
     const [playerLeague, setPlayerLeague] = useState({})
-
+    const [playerTier,setPlayerTier] = useState("")
     const [GameInfo, setGameInfo] = useState({});
     // const [profileIcon, setProfileIcon] = useState['']
         function searchForPlayer(event){
@@ -28,8 +28,9 @@ function App(){
             })
             axios.get(`https://eun1.api.riotgames.com/lol/league/v4/entries/by-summoner/${playerInfo.id}?api_key=${ApiKey}`)
             .then(function(response){
-                setPlayerLeague(response.data[1])
+                setPlayerLeague(response.data[0])
                console.log(playerLeague)
+               setPlayerTier(response.data[0].tier)
             
             })
             // axios.get(`/lol/match/v5/matches/by-puuid/${playerData}/ids?start=20&count=20&api_key=${ApiKey}`)
@@ -55,7 +56,7 @@ function App(){
                 <input type="text" name="gameName"  onChange={e => setSearchName(e.target.value)}/> 
                 <input type="text" name="gameTag"  onChange={e => setSearchTag(e.target.value)}/> 
                 <button onClick={searchForPlayer}>Search</button>  
-                <PlayerGUI name={searchPlayerName} icon={playerInfo.profileIconId} level={playerInfo.summonerLevel} tier={playerLeague.tier} rank={playerLeague.rank}/>
+                <PlayerGUI name={searchPlayerName} icon={playerInfo.profileIconId} level={playerInfo.summonerLevel} tier={playerTier} rank={playerLeague.rank}/>
             </>
         );
     }
